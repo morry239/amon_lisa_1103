@@ -18,7 +18,7 @@ public class SkyScrapersTest extends javax.swing.JFrame{
 	private JScrollPane jScrollPane1;
 	private DefaultListModel jListWolkenkrazer;
 	private JList jListalcobareno;
-	private JButton jBZeigen;
+	private JButton jBShow;
 	private JButton jBEnde;
 	
 
@@ -56,13 +56,13 @@ public class SkyScrapersTest extends javax.swing.JFrame{
 				}
 		    }
 		    {
-		    	jBZeigen = new JButton();
+		    	jBShow = new JButton();
 		    	getContentPane().add(jBZeigen);
-		    	jBZeigen.setText("Zeigen");
-		    	jBZeigen.setBounds(174, 230, 94, 23);
-		    	jBZeigen.addActionListener(new ActionListener() {
+		    	jBShow.setText("Zeigen");
+		    	jBShow.setBounds(174, 230, 94, 23);
+		    	jBShow.addActionListener(new ActionListener() {
 		    		public void actionPerformed(ActionEvent evt) {
-		    			jBZeigenActionPerformed(evt);
+		    			jBShowActionPerformed(evt);
 		    		}
 		    	});
 		    }
@@ -84,14 +84,13 @@ public class SkyScrapersTest extends javax.swing.JFrame{
 		}
 	}
 	
-	private void jBZeigenActionPerformed(ActionEvent evt) {
+	private void jBShowActionPerformed(ActionEvent evt) {
 		
 		int[] clues = {5100};
-		//ich möchte Text zurückliefern, deswegen solvePuzzle
+		
 		int[][] result = SkyScrapers.solvePuzzle(clues);
 		
-		System.out.println(result);
-//		skyscrapers.set(skyscrapers);
+		skyscrapers.setText(skyscrapers);
 	}
 	
 	private void jBEndeActionPerformed(ActionEvent evt) {
